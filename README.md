@@ -2,230 +2,101 @@
 
 ## Top User Provisioning & Directory Services Ecosystem
 
-
-
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
-
 *Focused on Identity Lifecycle Automation, Directory Management & Self-Hosted IAM*  
 
 **Last updated: October 2026**
 
-
-
 This repository tracks notable **SaaS platforms** and **open-source projects** for **User Provisioning & Directory Services**. These tools enable organizations to automate the joiner-mover-leaver lifecycle—creating, updating, and revoking user access across applications based on HR data and directory group memberships—while maintaining a centralized source of truth for identities and enforcing least privilege.
-
-
-
-**Examples** include Atlassian User Management, Okta Lifecycle Management, Microsoft Entra ID, JumpCloud, OneLogin, SailPoint, Lumos, Rippling, BetterCloud, and CyberArk Identity (the category leaders).
-
-
-
-**Open-source emphasis**: User Provisioning & Directory Services is a domain where open-source tooling is **strong at the directory and IAM layers but requires assembly for full lifecycle automation**. The strongest active projects are **Keycloak**, **Casdoor**, and **WSO2 Identity Server** for IAM with SCIM provisioning , **Axia** for LDAP/AD management with role-based access and audit logs , and **FusionDirectory** for delegated LDAP directory administration with trigger-based automation . For SCIM specifically, **GoSCIM** provides a lightweight, RFC-compliant SCIM 2.0 server , and **Canaille** offers lightweight identity management with SCIM provisioning . The critical gap: **no open-source project replicates the turnkey HR-to-app orchestration** of Okta or Rippling—those require building the orchestrator and connectors yourself.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-products)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Atlassian User Management](https://www.atlassian.com/)**  
-
-  Native user and group management across Atlassian products (Jira, Confluence, Bitbucket); supports SCIM provisioning from identity providers, role assignments, and product access controls.
-
-
-
-- **[Okta Lifecycle Management](https://www.okta.com/)**  
-
-  Leading identity cloud with automated provisioning/deprovisioning via SCIM and HR-driven workflows across thousands of app integrations; the benchmark for turnkey user lifecycle automation.
-
-
-
-- **[Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/microsoft-entra)**  
-
-  Microsoft's cloud identity service with Lifecycle Workflows (joiner/mover/leaver triggered by HR events), entitlement management, access reviews, and SCIM provisioning to SaaS apps.
-
-
-
-- **[JumpCloud](https://jumpcloud.com/)**  
-
-  Cloud directory platform with Directory-as-a-Service lifecycle management, SSO, device management, and LDAP; automates user onboarding/offboarding across connected systems.
-
-
-
-- **[OneLogin](https://www.onelogin.com/)**  
-
-  Identity and access management platform (now part of One Identity) with SSO, MFA, and automated user provisioning workflows.
-
-
-
-- **[SailPoint](https://www.sailpoint.com/)**  
-
-  Identity governance and administration (IGA) leader with access certification, role mining, lifecycle management, and compliance reporting.
-
-
-
-- **[Lumos](https://www.lumos.com/)**  
-
-  Identity governance platform focused on app access requests, approvals, and automated provisioning; positioned for mid-market companies wanting governance without full IGA complexity.
-
-
-
-- **[Rippling](https://www.rippling.com/)**  
-
-  Unified HR/IT platform with Identity and Access Management built on a single Employee Graph; automates onboarding/offboarding and enforces role-based access across 650+ integrations.
-
-
-
-- **[BetterCloud](https://www.bettercloud.com/)**  
-
-  SaaS management platform with automated user lifecycle workflows, policy enforcement, and directory integration for multi-app environments.
-
-
-
-- **[CyberArk Identity](https://www.cyberark.com/)**  
-
-  Identity security platform with privileged access management and identity governance; enforces least privilege across provisioning workflows.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Full IAM Platforms with SCIM Provisioning
-
-
-
-- **[Keycloak](https://github.com/keycloak/keycloak)**  
-
-  The most widely adopted open-source IAM platform (Apache-2.0); provides SSO, OAuth 2.0, OIDC, SAML, LDAP, RBAC, and **SCIM 2.0 server support (since 26.8)** for receiving users from Entra ID or Okta . User federation and identity brokering included. **The default choice for self-hosted IAM**—but provisioning workflows beyond SCIM ingestion require custom development.
-
-
-
-- **[Casdoor](https://github.com/casdoor/casdoor)**  
-
-  UI-first open-source IAM/SSO platform (Apache-2.0) with OAuth 2.0, OIDC, SAML, CAS, LDAP, and RBAC; includes **SCIM 2.0 server** (users and groups), a **built-in LDAP server**, and **MCP server** for AI agent access . Supports 70+ social/enterprise identity providers and syncers for Keycloak, Okta, Entra ID, Active Directory, Google Workspace, and any SQL database . **The most feature-dense open-source IAM for directory integration**—Go-based with a clean admin UI.
-
-
-
-- **[WSO2 Identity Server](https://github.com/wso2/product-is)**  
-
-  Enterprise-grade open-source IAM (Apache-2.0) recognized as a Digital Public Good; supports OAuth2, OIDC, SAML, SCIM 2.0, FIDO2, adaptive MFA, and RBAC. Manages over 1 billion identities across 1,500+ commercial deployments. **The most enterprise-ready open-source IAM foundation** for provisioning and SSO.
-
-
-
-- **[Hanzo IAM](https://github.com/hanzoai/iam)**  
-
-  Open-source, AI-first IAM with web UI (Apache-2.0); supports OAuth 2.1, OIDC, SAML, CAS, LDAP, **SCIM provisioning**, WebAuthn, MFA, RBAC, and multi-tenancy . **Notable for MCP/A2A gateway** for AI agent access control. A modern alternative for teams building AI-augmented identity workflows.
-
-
-
-### Directory Management (LDAP / Active Directory)
-
-
-
-- **[Axia](https://github.com/Nelsar/Axia)**  
-
-  Self-hosted **LDAP admin web console and REST API** for Active Directory and OpenLDAP (MIT) . Features user, group, OU, and computer management with **role-based access** (Admin, UserCreator, UserEditor, UserDeleter) and **audit logging**; LDAPS with certificate verification, JWT-based API auth, AES-encrypted bind passwords at rest, and PostgreSQL/SQLite backend. Docker Compose deployment or Windows installer. **The cleanest open-source LDAP management tool** for administrators wanting a modern web UI over directory operations—but it manages the directory, not cross-app provisioning.
-
-
-
-- **[FusionDirectory](https://github.com/fusiondirectory/fusiondirectory-plugins)**  
-
-  Open-source **Identity Management solution for LDAP directories** (GPL) . Provides delegated administration with fine-grained ACLs and complex roles (User, Local admin, Global admin, HR); manages users, groups, mail, sudo, ssh, systems, services, DHCP, and DNS. **Trigger system** launches scripts on create/edit/delete/password-change events—useful for automating onboarding/offboarding actions (badge generation, mailbox archiving, third-party app deletion) when a user is added or removed from LDAP . **The strongest open-source tool for delegated directory administration with event-driven automation**.
-
-
-
-- **[GLAuth](https://marketplace.microsoft.com/en-us/product/athinfosystems1641442221349.glauth)**  
-
-  Lightweight open-source **LDAP authentication and identity management server** written in Go . Positioned as a simple alternative to OpenLDAP and Microsoft Active Directory; supports centralized user/group management, file-based or database-backed directories, REST API, web administration, and role-based access control. Container-friendly with Docker/Kubernetes support. **Best for small to mid-sized environments** wanting a minimal LDAP server without full AD complexity .
-
-
-
-### SCIM Provisioning Servers
-
-
-
-- **[GoSCIM](https://github.com/arturoeanton/goscim)**  
-
-  Lightning-fast **SCIM 2.0 server** in Go (RFC 7643/7644 compliant) . Features dynamic schema loading (add resource types via JSON, no code), per-attribute permissions, OAuth 2.0, ETag concurrency control, and Couchbase backend. **Limitations**: no Bulk operations, no value-path filters, no password hashing . **The best lightweight SCIM server** for building custom provisioning endpoints—pair with an orchestrator for lifecycle automation.
-
-
-
-- **[Canaille](https://pypi.org/project/Canaille/0.0.77/)**  
-
-  Lightweight identity and authorization management software (Python) . Features user profile and group management, authentication/registration/password reset, authorization via OpenID Connect, and **SCIM provisioning**; first-class support for PostgreSQL, MariaDB, and OpenLDAP; customizable and themable . **Best for teams wanting a simple, readable identity management layer** with SCIM output.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **FreeIPA** — Open-source identity management for Linux environments (LDAP, Kerberos, policy-based access control); can integrate with AD for mixed environments . **Linux-centric**—best for organizations standardizing on Linux infrastructure.
-
-- **OpenLDAP** — The foundational open-source LDAP directory server; integrates with AD for authentication and directory queries . **Infrastructure layer**—provides the directory itself, not management tooling or provisioning workflows.
-
-- **Apache Directory Studio** — GUI-based LDAP directory editor for browsing, editing, and schema management . **Administrator tool**—useful for manual directory operations, not automated provisioning.
-
-
-
-**Frameworks for building custom systems**: For **IAM with SCIM ingestion and SSO**, Keycloak, Casdoor, or WSO2 Identity Server . For **LDAP/AD management with audit logs**, Axia . For **delegated directory administration with event-driven automation**, FusionDirectory . For **lightweight SCIM endpoints**, GoSCIM . For **simple identity management with SCIM output**, Canaille . No open-source project provides the **turnkey HR-to-app orchestration with pre-built connectors** of Okta or Rippling—that requires assembling an orchestrator (like the hr-onboarding-automation reference) with SCIM servers and directory management tools.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- User provisioning and directory services platforms handling identity data must comply with applicable privacy regulations (GDPR, CCPA) and security frameworks (SOC 2, ISO 27001); **improper deprovisioning leaves orphaned accounts that create breach risk**.
-
-- **Open-source user provisioning is mature at the IAM and directory layers**—Keycloak, Casdoor, and WSO2 Identity Server provide production-grade identity and SCIM capabilities , and Axia/FusionDirectory provide directory management with audit trails . However, **no open-source project replicates the turnkey HR-driven lifecycle automation** of Okta or Rippling with pre-built connectors for hundreds of apps. Organizations requiring full lifecycle automation should evaluate commercial platforms or invest in custom orchestration.
-
-- Verify license terms for commercial use; Keycloak and Casdoor use Apache-2.0 , Axia uses MIT , FusionDirectory uses GPL , and GoSCIM is open-source (check repository) .
-
-
 
 ---
 
+## 📑 Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
+- [SaaS/Hosted Platforms](#saashosted-platforms)
+- [Open-Source GitHub Projects](#open-source-github-projects)
+- [How to Contribute](#how-to-contribute)
+- [Disclaimer](#disclaimer)
 
-**Made for identity architects, IT administrators, security engineers, and directory services teams.**  
+---
 
-Let's make user provisioning and directory services more open, but with clear eyes about the connector ecosystem and lifecycle orchestration that commercial platforms still own.
+## Sector Overview & Market Dynamics
+
+> 📈 **Market Size & Growth**: The global User Provisioning, Directory Services, and Identity Governance & Administration (IGA / IAM) market is estimated at **$18.5 Billion in 2024** and is projected to expand to over **$42 Billion by 2031**, progressing at a Compound Annual Growth Rate (CAGR) of **~13.5%**, accelerated by mandatory zero-trust architectures, widespread cloud adoption, and regulatory compliance pressures (SOC 2, ISO 27001, NIS2, HIPAA, GDPR).
+>
+> 🧩 **Market Concentration & Competitive Landscape**: The sector is **moderately fragmented with high concentration at the core enterprise directory and SSO layer**. Incumbents like Microsoft Entra ID and Okta command dominant positions for core enterprise authentication and directory federation, while specialized governance (SailPoint), modern access workflows (Lumos), unified HR/IT identity orchestration (Rippling), and privileged identity management (CyberArk) form a fiercely competitive, distributed ecosystem of specialized best-of-breed platforms.
+
+---
+
+## SaaS/Hosted Platforms
+
+The table below lists prominent SaaS and hosted platforms providing identity provisioning, directory management, and user lifecycle automation. The table is sorted by company scale in descending order (by market capitalization or latest private valuation).
+
+| Company / Product | Market Cap / Valuation | Starting Tier Pricing | Free Tier / Free Trial Limits | Key Provisioning & Directory Capabilities |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/microsoft-entra)** | ~$3.1 Trillion *(Market Cap)* | **$3.00** /user/month *(Entra ID P1)*; P2 at $6.00 /user/month | **Free Forever Plan** (up to 50,000 objects/directory; SSO for up to 10 apps per user, basic directory sync) + **30-day Free Trial** for P2 premium features | Native Azure/M365 integration, HR-driven Lifecycle Workflows (joiner/mover/leaver), inbound/outbound SCIM 2.0 provisioning, and dynamic security group assignment. |
+| **[Atlassian User Management](https://www.atlassian.com/)** | ~$48 Billion *(Market Cap)* | **$7.00** /user/month *(Atlassian Cloud Guard Standard)* | **Free Forever Plan** for up to 10 users across Jira & Confluence + **30-day Free Trial** for Atlassian Guard and Cloud Enterprise | Centralized user and group directory management across Jira, Confluence, and Bitbucket; supports SCIM provisioning from external IdPs, SAML SSO, and directory audit trails. |
+| **[Okta Lifecycle Management](https://www.okta.com/)** | ~$15 Billion *(Market Cap)* | **$4.00** /user/month *(Okta Lifecycle Management)*; SSO starts at $2.00 /user/month (annual contract min. $1,500/yr) | **30-day Free Trial** (unlimited users and full access to Okta Integration Network and SCIM workflows during trial) | Automated joiner-mover-leaver workflows, pre-built SCIM integrations with 7,000+ cloud applications, HR-driven provisioning (Workday, BambooHR), and attribute-level mapping. |
+| **[Rippling](https://www.rippling.com/)** | ~$13.5 Billion *(Valuation)* | **$8.00** /employee/month *(base HR platform + App Management module add-on)* | **14-day Free Trial** (by sales demo qualification; access to sandbox directory environment) | Single Employee Graph unifying HR data with automated app provisioning/deprovisioning across 650+ apps, automated role-based permission grouping, and hardware provisioning. |
+| **[CyberArk Identity](https://www.cyberark.com/)** | ~$11.5 Billion *(Market Cap)* | **$3.00** /user/month *(CyberArk Identity SSO & User Management)* | **30-day Free Trial** (up to 50 users with full access to identity federation, MFA, and automated user provisioning) | Integrated directory services with automated lifecycle management, inbound/outbound SCIM provisioning, privileged account governance, and zero-trust policy enforcement. |
+| **[SailPoint](https://www.sailpoint.com/)** | ~$7.1 Billion *(Acquisition Valuation)* | **$4.00** /user/month *(SailPoint Identity Security Cloud Standard)* | **30-day Free Trial** (interactive sandbox access available through guided sales engagement) | Enterprise Identity Governance and Administration (IGA) with automated lifecycle management, role discovery and mining, access certification, and compliance reporting across hybrid directories. |
+| **[JumpCloud](https://jumpcloud.com/)** | ~$2.6 Billion *(Valuation)* | **$9.00** /user/month *(Core Directory tier)*; Platform tier at $15.00 /user/month | **Free Forever Plan** (up to 10 users and 10 devices with all platform features included forever; 10 days of premium chat support) + **30-day Free Trial** | Cloud Directory-as-a-Service unifying user identity, device management (Mac, Windows, Linux), Cloud LDAP, Cloud RADIUS, SAML SSO, and SCIM automated provisioning. |
+| **[OneLogin](https://www.onelogin.com/)** | ~$2.0 Billion *(Acquisition Valuation via One Identity)* | **$4.00** /user/month *(Advanced Identity with Provisioning)* | **30-day Free Trial** (unlimited users and full access to SCIM app connectors and directory synchronization during trial) | Automated real-time provisioning and deprovisioning via SCIM, Active Directory / LDAP bi-directional synchronization, and entitlement-based role assignment. |
+| **[Lumos](https://www.lumos.com/)** | ~$1.0 Billion *(Valuation)* | **$3.50** /user/month *(App Governance & Access Requests)* | **14-day Free Trial** (free guided trial with connectable sandbox integrations) | Self-service AppStore for employee access requests, automated time-bound role provisioning via SCIM connectors, and automated license deprovisioning. |
+| **[BetterCloud](https://www.bettercloud.com/)** | ~$700 Million *(Acquisition Valuation)* | **$3.00** /user/month *(BetterCloud Core SaaS Management)* | **14-day Free Trial** (full-featured access to automated onboarding/offboarding workflow engine for connected SaaS apps) | Multi-SaaS user lifecycle management and orchestration, automated offboarding checklists across disparate directories, policy-driven security remediation, and audit logging. |
+
+---
+
+## Open-Source GitHub Projects
+
+The table below curates the top open-source projects for user provisioning, directory services, and self-hosted IAM. The table is ranked by GitHub star count in descending order.
+
+| Project / Repository | Stars | License | Description & Provisioning Capabilities |
+| :--- | :--- | :--- | :--- |
+| **[Keycloak](https://github.com/keycloak/keycloak)** | [![GitHub stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers) | Apache-2.0 | The industry standard open-source IAM and directory broker. Offers OpenID Connect, OAuth 2.0, SAML 2.0, LDAP/Kerberos federation, user registration/lifecycle management, and SCIM 2.0 server capabilities for receiving directory accounts from Okta, Entra ID, or HR systems. |
+| **[Authelia](https://github.com/authelia/authelia)** | [![GitHub stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | Apache-2.0 | Lightweight authentication and authorization server acting as an identity portal for reverse proxies. Integrates with LDAP/file user directories, supports 2FA (TOTP/WebAuthn), and enforces fine-grained access rules for self-hosted apps. |
+| **[Authentik](https://github.com/goauthentik/authentik)** | [![GitHub stars](https://img.shields.io/github/stars/goauthentik/authentik?style=social&color=white)](https://github.com/goauthentik/authentik/stargazers) | GPL-3.0 | Modern open-source Identity Provider focused on flexibility and automation. Includes built-in SCIM 2.0 service provider (inbound) and client (outbound) provisioning, LDAP outpost, user lifecycle event flows, enrollment stages, and multi-protocol SSO. |
+| **[ZITADEL](https://github.com/zitadel/zitadel)** | [![GitHub stars](https://img.shields.io/github/stars/zitadel/zitadel?style=social&color=white)](https://github.com/zitadel/zitadel/stargazers) | Apache-2.0 | Cloud-native identity platform built with event-sourcing architecture. Provides multi-tenancy, self-service user onboarding, fine-grained RBAC/ABAC role delegation, audit trails, and automated user management via gRPC/REST APIs. |
+| **[Casdoor](https://github.com/casdoor/casdoor)** | [![GitHub stars](https://img.shields.io/github/stars/casdoor/casdoor?style=social&color=white)](https://github.com/casdoor/casdoor/stargazers) | Apache-2.0 | Feature-dense, UI-first IAM platform built with Go and React. Features built-in SCIM 2.0 server endpoints, a built-in virtual LDAP server, multi-tenant RBAC, and bi-directional syncers with Active Directory, Okta, Google Workspace, and SQL databases. |
+| **[Ory Kratos](https://github.com/ory/kratos)** | [![GitHub stars](https://img.shields.io/github/stars/ory/kratos?style=social&color=white)](https://github.com/ory/kratos/stargazers) | Apache-2.0 | API-first, cloud-native user management and identity administration system. Implements self-service user registration, profile management, account verification, recovery flows, MFA, and headless integration for custom directory architectures. |
+| **[LLDAP](https://github.com/lldap/lldap)** | [![GitHub stars](https://img.shields.io/github/stars/lldap/lldap?style=social&color=white)](https://github.com/lldap/lldap/stargazers) | GPL-3.0 | Lightweight, low-overhead LDAP server with a modern web administration console. Ideal for home labs and small organizations wanting straightforward user and group management without full Active Directory/OpenLDAP complexity. |
+| **[GLAuth](https://github.com/glauth/glauth)** | [![GitHub stars](https://img.shields.io/github/stars/glauth/glauth?style=social&color=white)](https://github.com/glauth/glauth/stargazers) | MIT | Minimalist, lightweight LDAP authentication and directory server written in Go. Supports static configuration files, SQLite/MySQL/PostgreSQL backends, REST API endpoints, and containerized deployments. |
+| **[FreeIPA](https://github.com/freeipa/freeipa)** | [![GitHub stars](https://img.shields.io/github/stars/freeipa/freeipa?style=social&color=white)](https://github.com/freeipa/freeipa/stargazers) | GPL-3.0 | Complete open-source enterprise identity and domain controller for Linux/UNIX environments. Combines 389 Directory Server (LDAP), MIT Kerberos, NTP, DNS, Dogtag Certificate System, and SSSD with bi-directional Active Directory cross-forest trust. |
+| **[OpenIdentityPlatform OpenAM](https://github.com/openidentityplatform/openam)** | [![GitHub stars](https://img.shields.io/github/stars/openidentityplatform/openam?style=social&color=white)](https://github.com/openidentityplatform/openam/stargazers) | CDDL-1.0 | Open-source enterprise Access Management and SSO solution derived from Sun OpenSSO/ForgeRock OpenAM. Provides centralized identity brokering, directory federation, entitlements, and self-service registration. |
+| **[WSO2 Identity Server](https://github.com/wso2/product-is)** | [![GitHub stars](https://img.shields.io/github/stars/wso2/product-is?style=social&color=white)](https://github.com/wso2/product-is/stargazers) | Apache-2.0 | Enterprise-grade IAM and CIAM platform managing over 1B identities globally. Provides robust bi-directional SCIM 2.0 provisioning, inbound/outbound user identity synchronization, adaptive MFA, and delegated administration. |
+| **[OpenLDAP](https://github.com/openldap/openldap)** | [![GitHub stars](https://img.shields.io/github/stars/openldap/openldap?style=social&color=white)](https://github.com/openldap/openldap/stargazers) | OpenLDAP | The foundational reference implementation of the Lightweight Directory Access Protocol (LDAP). Serves as the central directory store for identities, groups, and permissions across millions of enterprise and open-source systems. |
+| **[midPoint](https://github.com/Evolveum/midpoint)** | [![GitHub stars](https://img.shields.io/github/stars/Evolveum/midpoint?style=social&color=white)](https://github.com/Evolveum/midpoint/stargazers) | EUPL-1.2 | Comprehensive open-source Identity Governance and Administration (IGA) and provisioning engine. Automates joiner-mover-leaver lifecycles, role catalogs, access certifications, and bi-directional directory synchronization via ConnId connectors and SCIM. |
+| **[Apache Syncope](https://github.com/apache/syncope)** | [![GitHub stars](https://img.shields.io/github/stars/apache/syncope?style=social&color=white)](https://github.com/apache/syncope/stargazers) | Apache-2.0 | Top-level Apache project for digital identity management and enterprise provisioning. Features bi-directional identity reconciliation, ConnId connector architecture, end-user self-service, and role entitlement synchronization. |
+| **[389 Directory Server](https://github.com/389ds/389-ds-base)** | [![GitHub stars](https://img.shields.io/github/stars/389ds/389-ds-base?style=social&color=white)](https://github.com/389ds/389-ds-base/stargazers) | GPL-3.0 | Hardened, enterprise-class LDAP directory server developed by Red Hat (upstream of Red Hat Directory Server). Built for high-volume replication, multi-master clustering, and high-performance identity storage. |
+| **[FusionDirectory](https://github.com/fusiondirectory/fusiondirectory)** | [![GitHub stars](https://img.shields.io/github/stars/fusiondirectory/fusiondirectory?style=social&color=white)](https://github.com/fusiondirectory/fusiondirectory/stargazers) | GPL-2.0 | Web-based directory administration and identity management console for OpenLDAP. Offers fine-grained ACLs, role delegation, and an event-driven trigger system to run automated lifecycle scripts when accounts are created, updated, or removed. |
+| **[Apache Directory Studio](https://github.com/apache/directory-studio)** | [![GitHub stars](https://img.shields.io/github/stars/apache/directory-studio?style=social&color=white)](https://github.com/apache/directory-studio/stargazers) | Apache-2.0 | Complete directory tooling platform and GUI browser for LDAP administration. Features full schema browser, LDIF editor, batch entry management, and access control testing across any standard LDAP server. |
+| **[OpenIdentityPlatform OpenIDM](https://github.com/openidentityplatform/openidm)** | [![GitHub stars](https://img.shields.io/github/stars/openidentityplatform/openidm?style=social&color=white)](https://github.com/openidentityplatform/openidm/stargazers) | CDDL-1.0 | Open-source Identity Management and Provisioning framework derived from ForgeRock OpenIDM. Automates user provisioning, password resets, role-based access assignment, and bi-directional directory synchronization across systems. |
+| **[GoSCIM](https://github.com/arturoeanton/goscim)** | [![GitHub stars](https://img.shields.io/github/stars/arturoeanton/goscim?style=social&color=white)](https://github.com/arturoeanton/goscim/stargazers) | MIT | Ultra-fast, lightweight RFC 7643/7644 compliant SCIM 2.0 server implemented in Go. Features dynamic schema loading via JSON, fine-grained attribute-level permissioning, ETag concurrency controls, and high-throughput Couchbase storage integration. |
+| **[Canaille](https://github.com/yaal-coop/canaille)** | [![GitHub stars](https://img.shields.io/github/stars/yaal-coop/canaille?style=social&color=white)](https://github.com/yaal-coop/canaille/stargazers) | MIT | Lightweight Python-based identity and authorization management tool. Provides user profile administration, OpenID Connect authentication, and SCIM provisioning with first-class support for SQL and OpenLDAP backends. |
+| **[Axia](https://github.com/Nelsar/Axia)** | [![GitHub stars](https://img.shields.io/github/stars/Nelsar/Axia?style=social&color=white)](https://github.com/Nelsar/Axia/stargazers) | Apache-2.0 | Self-hosted LDAP administration web console and REST API for Active Directory and OpenLDAP. Features user, group, OU, and computer management with role-based access controls and detailed audit logging. |
+
+---
+
+## How to Contribute
+
+We welcome additions, corrections, and improvements from identity architects, IT administrators, security engineers, and open-source contributors!
+
+1. 🍴 **Fork the repository** to your GitHub account.
+2. 🌿 **Create a feature branch**: `git checkout -b add-provisioning-tool`.
+3. 📝 **Add or update entries**:
+   - For SaaS: Include starting tier pricing, free plan / trial details, and company scale (market cap / valuation).
+   - For Open-Source: Include the official GitHub repository link, license, and verified GitHub star badge linked to stargazers.
+4. 🚀 **Submit a Pull Request** with a concise description and official reference links.
+
+---
+
+## Disclaimer
+
+- This is a **community-curated** list maintained for informational and educational purposes; mention does not constitute commercial endorsement.
+- User provisioning and directory services handle sensitive personal identity data and security credentials. Always ensure systems comply with applicable data protection regulations (GDPR, CCPA) and security standards (SOC 2, ISO 27001). Improper deprovisioning leaves orphaned accounts that create severe enterprise breach risks.
+- Verify license terms for individual open-source projects before commercial deployment.
+
+---
+
+**Made with ❤️ for identity architects, IT administrators, security engineers, and directory services teams.**
